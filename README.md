@@ -1,7 +1,18 @@
 # NHKforKindle
 
-MODIFIED THE CODE FROM THIS REPO: (https://github.com/vebaev/NHKforKindle/blob/master/README.md)
+### MODIFIED THE CODE FROM THIS REPO: 
+(https://github.com/vebaev/NHKforKindle/blob/master/README.md)
 Changed it to parse monthly instead of daily
+does not support shell script yet, will do so soon
+
+TO USE:
+
+```shell
+python3 nhk-easy.py <mth>
+
+# where <mth> is the specified mth 
+# year is calculated using the sys clock
+```
 
 If someone is having a habit of reading the japanese news from NHK every day, here is a script that I modified to download todays news from NHK Easy in a single clean HTML and than convert it to MOBI format for your Kindle.
 
