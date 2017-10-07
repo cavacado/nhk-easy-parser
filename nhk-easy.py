@@ -65,6 +65,7 @@ def parseMonth(dic, mth):
         
         file = open(save_path + '/' + join_str + '/' + join_str + '.opf', "w")
         file.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?><package version=\"3.0\" xmlns=\"http://www.idpf.org/2007/opf\"         unique-identifier=\"BookId\"> <metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\"           xmlns:dcterms=\"http://purl.org/dc/terms/\">   <dc:title>NHK ニュース・読み物・" + join_str + "</dc:title>    <dc:contributor>NHK</dc:contributor>   <dc:language>ja</dc:language>   <dc:publisher>NHK</dc:publisher> </metadata> <manifest>  <item id=\"titlepage\" href=\"" + output + "\" media-type=\"application/xhtml+xml\" /> </manifest> <spine toc=\"tocncx\" page-progression-direction=\"rtl\">  <itemref idref=\"titlepage\" /> </spine></package>")
+        print("File \"" + save_path + '/' + join_str + '/' + join_str + '.opf' + "\" created")
         file.close()
         
     print("The month's news were downloaded from NHK.")
