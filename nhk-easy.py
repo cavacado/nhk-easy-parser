@@ -55,7 +55,7 @@ def parseMonth(dic, mth):
         print("<!DOCTYPE html>", file=f)
         print("<html lang='ja'>", file=f)
         print('<head><meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" >', file=f)
-        print('<style type="text/css">body { margin-left: 1em; margin-right: 1em; writing-mode:tb-rl; -epub-writing-mode: vertical-rl; -webkit-writing-mode: vertical-rl; line-break: normal; -epub-line-break: normal; -webkit-line-break: normal;} {font-family: serif;} p { text-indent: 1em;} h2{ font-size: large; font-weight: bold;}</style>', file=f)
+        print('<style type="text/css">body { margin-left: 1em; margin-right: 1em; margin-top: 2em; margin-bottom: 2em; writing-mode:tb-rl; -epub-writing-mode: vertical-rl; -webkit-writing-mode: vertical-rl; line-break: normal; -epub-line-break: normal; -webkit-line-break: normal; color: #eee; font-size: larger; background: #111; line-height: 200%; font-family: "Hiragino Sans", sans-serif; } p { text-indent: 1em;} h2{ font-weight: bold; font-size: large; }</style>', file=f)
         print("</head>", file=f)
         print("<body>", file=f)
         print("<br />".join(content), file=f)
