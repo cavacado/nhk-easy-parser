@@ -55,7 +55,7 @@ def parseMonth(dic, mth):
         print("<!DOCTYPE html>", file=f)
         print("<html lang='ja'>", file=f)
         print('<head><meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" >', file=f)
-        print('<style type="text/css">body { margin-left: 1em; margin-right: 1em; margin-top: 2em; margin-bottom: 2em; writing-mode:tb-rl; -epub-writing-mode: vertical-rl; -webkit-writing-mode: vertical-rl; line-break: normal; -epub-line-break: normal; -webkit-line-break: normal; color: #eee; font-size: larger; background: #111; line-height: 200%; font-family: "Hiragino Sans", sans-serif; } p { text-indent: 1em;} h2{ font-weight: bold; font-size: large; }</style>', file=f)
+        print('<style type="text/css">body { margin-left: 1em; margin-right: 1em; margin-top: 2em; margin-bottom: 2em; writing-mode:tb-rl; -epub-writing-mode: vertical-rl; -webkit-writing-mode: vertical-rl; line-break: normal; -epub-line-break: normal; -webkit-line-break: normal; color: #eee; font-size: larger; background: #111; line-height: 200%; font-family: "Hiragino Sans", sans-serif; } p { text-indent: 1em; font-size: medium } h1 { font-weight: bold; font-size: large; }</style>', file=f)
         print("</head>", file=f)
         print("<body>", file=f)
         print("<br />".join(content), file=f)
@@ -81,16 +81,16 @@ def parseNews(news):
     r.encoding = 'utf-8'
 
     soup = BeautifulSoup(r.text, 'html.parser')
-    date = soup.find('p', attrs={'id':'newsDate'}).contents[0]
-    title = soup.find('div', attrs={'id':'newstitle'})#.find('h2')
-    article = soup.find('div', attrs={'id':'newsarticle'})
+    date = soup.find('p', attrs={'id':'js-article-date'})
+    title = soup.find('h1', attrs={'class':'article-main__title'})#.find('h2')
+    article = soup.find('div', attrs={'id':'js-article-body'})
 
     for a in article.findAll('a'):
         a.unwrap()
         voice = {}
 
     return {
-        "content": str(title) + str(article),
+        "content": str(title) + str(date) + str(article),
         "voice": voice
     }
 
